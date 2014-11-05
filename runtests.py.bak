@@ -1,6 +1,5 @@
 #! /usr/bin/env python
 
-from __future__ import print_function
 import sys
 try:
     import unittest2 as unittest
@@ -41,9 +40,9 @@ class RandomOrderTestSuite(unittest.TestSuite):
             if result.shouldStop:
                 break
             test(result)
-        print()
-        print()
-        print('>>> python runtests.py --seed={0}'.format(self.__seed))
+        print
+        print
+        print '>>> python runtests.py --seed={0}'.format(self.__seed)
         return result
 
 if __name__ == "__main__":
@@ -70,4 +69,4 @@ if __name__ == "__main__":
     cov.stop()
     # Output the coverage
     cov.html_report(directory='htmlcov')
-    print('Coverage report written to: {0}'.format(path.join(path.dirname(__file__), 'htmlcov', 'index.html')))
+    print 'Coverage report written to: {0}'.format(path.join(path.dirname(__file__), 'htmlcov', 'index.html'))

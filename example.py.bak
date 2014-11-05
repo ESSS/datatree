@@ -1,4 +1,3 @@
-from __future__ import print_function
 from datatree import Tree
 
 if __name__ == '__main__':
@@ -13,17 +12,17 @@ if __name__ == '__main__':
             novels.node('novel', 'The Fifth Elephant', year=1999)
             novels.node("novel", "Guards! Guards!", year=1989)
 
-    print('XML:')
-    print(author(pretty=True))
-    print()
-    print()
-    print('JSON:')
-    print(author('json', pretty=True))
-    print()
-    print()
-    print('YAML:')
-    print(author('yaml'))
-    print()
-    print()
-    print('Dict:')
-    print(author('dict', pretty_string=True))
+    print 'XML:'
+    print author(pretty=True)
+    print
+    print
+    print 'JSON:'
+    print author('json', pretty=True)
+    print
+    print
+    print 'YAML:'
+    print author('yaml')
+    print
+    print
+    print 'Dict:'
+    print author('dict', pretty_string=True)
