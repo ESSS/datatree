@@ -3,4 +3,5 @@ PyYAML
 sphinx
 coverage
 tox
+future
 
