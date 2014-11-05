@@ -1,4 +1,3 @@
-from builtins import map
 from os import path
 from setuptools import setup, find_packages
 
