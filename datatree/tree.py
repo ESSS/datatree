@@ -1,4 +1,8 @@
-from StringIO import StringIO
+from future import standard_library
+standard_library.install_aliases()
+from builtins import str
+from builtins import object
+from io import StringIO
 
 from .symbols import Symbol
 from .utils import get_class

@@ -1,3 +1,4 @@
+from builtins import object
 
 class Symbol(object):
     """A symbol is used to represent a string, usually one that is intended to

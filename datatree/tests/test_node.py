@@ -1,3 +1,4 @@
+from builtins import str
 try:
     import unittest2 as unittest
 except ImportError:
@@ -74,7 +75,7 @@ class test_Node(unittest.TestCase, NodeTestBase):
     def test_to_string(self):
         self.assertIsInstance(
             self.get_unified_tree().to_string(),
-            basestring
+            str
         )
 
     def test_render_child_node_as_root(self):
@@ -86,5 +87,5 @@ class test_Node(unittest.TestCase, NodeTestBase):
 
         self.assertIsInstance(
             child.render(),
-            basestring
+            str
         )

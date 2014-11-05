@@ -37,8 +37,11 @@ Or even shorter:
         </novels>
     </author>
 """
+from future import standard_library
+standard_library.install_aliases()
+from builtins import str
 from xml.sax.saxutils import escape, quoteattr
-from StringIO import StringIO # TODO: cStringIO has no unicode support. Do we care?
+from io import StringIO # TODO: cStringIO has no unicode support. Do we care?
 
 from datatree.render.base import InternalRenderer
 from datatree.symbols import Symbol
@@ -169,5 +172,5 @@ class XmlRenderer(InternalRenderer):
     @staticmethod
     def get_attrs_str(attrs):
         attrs = ('{0}={1}'.format(key, quoteattr(str(value)))
-        for key, value in attrs.iteritems())
+        for key, value in attrs.items())
         return ' '.join(attrs).strip()

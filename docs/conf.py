@@ -1,3 +1,4 @@
+from builtins import map
 # -*- coding: utf-8 -*-
 #
 # datatree documentation build configuration file, created by
