@@ -1,5 +1,7 @@
+six
 ### These are required for testing only. ###
+pytest
 PyYAML
 sphinx
 coverage
-
+tox

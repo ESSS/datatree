@@ -1,4 +1,4 @@
-from StringIO import StringIO
+from six import StringIO
 
 from .symbols import Symbol
 from .utils import get_class
