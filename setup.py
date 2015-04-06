@@ -1,14 +1,13 @@
 from os import path
 from setuptools import setup, find_packages
 
-from datatree import VERSION
-
 with open(path.join(path.dirname(__file__), 'README.rst')) as f:
     readme = f.read()
 
 setup(
     name='datatree',
-    version='.'.join(map(str, VERSION)),
+    # TODO: How to handle version here and inside datatree.__init__.VERSION without duplication.
+    version='0.1.8.1',
     license='Creative Commons Attribution 3.0 Unported License',
     description='DSL for creating structured documents in python.',
     long_description=readme,
@@ -16,7 +15,16 @@ setup(
     author='Jason Webb',
     author_email='bigjasonwebb@gmail.com',
     packages=find_packages(),
-    install_requires=['six'],
+    install_requires=[
+        'six'
+    ],
+    tests_require=[
+        'pytest',
+        'PyYAML',
+        'sphinx',
+        'coverage',
+        'tox',
+    ],
     include_package_data=True,
     classifiers=[
        'Development Status :: 4 - Beta',
