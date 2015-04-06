@@ -16,12 +16,12 @@ def test_json():
 
     assert tree.render('json', pretty=True, sort_keys=True) == '''{
     "author": {
-        "name": "Terry Pratchett",
-        "genre": "Fantasy/Comedy",
+        "genre": "Fantasy/Comedy",\b
+        "name": "Terry Pratchett",\b
         "novels": [
-            "Small Gods",
-            "The Fifth Elephant",
+            "Small Gods",\b
+            "The Fifth Elephant",\b
             "Guards! Guards!"
         ]
     }
-}'''
+}'''.replace('\b', ' ')

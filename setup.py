@@ -1,19 +1,33 @@
 from os import path
 from setuptools import setup, find_packages
+from setuptools.command.test import test as TestCommand
+
+
+
+#===================================================================================================
+# PyTest
+#===================================================================================================
+class PyTest(TestCommand):
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        import pytest
+        import sys
+        errcode = pytest.main(self.test_args)
+        sys.exit(errcode)
+
+
 
 with open(path.join(path.dirname(__file__), 'README.rst')) as f:
     readme = f.read()
 
 setup(
     name='datatree',
-    # TODO: How to handle version here and inside datatree.__init__.VERSION without duplication.
     version='0.1.8.1',
-    license='Creative Commons Attribution 3.0 Unported License',
-    description='DSL for creating structured documents in python.',
-    long_description=readme,
-    url='https://github.com/bigjason/datatree',
-    author='Jason Webb',
-    author_email='bigjasonwebb@gmail.com',
+
     packages=find_packages(),
     install_requires=[
         'six'
@@ -25,7 +39,19 @@ setup(
         'coverage',
         'tox',
     ],
+    cmdclass = {
+        'test': PyTest
+    },
+
     include_package_data=True,
+
+    # Project description
+    author='Jason Webb',
+    author_email='bigjasonwebb@gmail.com',
+    url='https://github.com/bigjason/datatree',
+    license='Creative Commons Attribution 3.0 Unported License',
+    description='DSL for creating structured documents in python.',
+    long_description=readme,
     classifiers=[
        'Development Status :: 4 - Beta',
        'Topic :: Text Processing :: Markup',

@@ -1,5 +1,6 @@
 *.pyc
 /.idea/
+/.tox/
 .project
 .pydevproject
 datatree.egg-info/
