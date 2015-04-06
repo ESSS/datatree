@@ -16,6 +16,7 @@ setup(
     author='Jason Webb',
     author_email='bigjasonwebb@gmail.com',
     packages=find_packages(),
+    install_requires=['six'],
     include_package_data=True,
     classifiers=[
        'Development Status :: 4 - Beta',
